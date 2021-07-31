@@ -3,7 +3,7 @@ package school.lesson2;
 import java.util.Random;
 import java.util.Scanner;
 
-public class HomeWorkApp2_1 {
+public class HomeWorkApp2Game {
     public static int SIZE = 3;
     public static final char DOT_EMPTY = '-';
     public static final char DOT_X = 'X';
