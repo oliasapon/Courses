@@ -15,6 +15,9 @@ public class HomeWorkApp2 {
         fillDiagonal();
         System.out.println(Arrays.toString(returnArray(7, 12)));
         minAndMaxValue();
+
+        int[] array = {2, 3, 7, 1, 4, 8, 5};
+        displacementArray(array, 3);
     }
 
     public static boolean sumFrom10To20(int x1, int x2) {
@@ -22,11 +25,8 @@ public class HomeWorkApp2 {
     }
 
     public static void positiveOrNegativeNumber(int x) {
-        if (x >= 0) {
-            System.out.println("х = " + x + " - положительное число!");
-        } else {
-            System.out.println("х = " + x + " - отрицательное число!");
-        }
+        String result = (x >= 0) ? "х = " + x + " - положительное число!" : "х = " + x + " - отрицательное число!";
+        System.out.println(result);
     }
 
     public static boolean isPositiveOrNegative(int x) {
@@ -116,5 +116,27 @@ public class HomeWorkApp2 {
             }
         }
         System.out.println("Минимальное значение массива: " + min + "\nМаксимальное значение массива: " + max);
+    }
+
+    public static void displacementArray(int[] array, int n) {
+        System.out.println("Начальный массив: " + Arrays.toString(array));
+        if (n > 0) {
+            for (int i = 0; i < n; i++) {
+                int var = array[array.length - 1];
+                for (int j = array.length - 1; j > 0; j--) {
+                    array[j] = array[j - 1];
+                }
+                array[0] = var;
+            }
+        } else if (n < 0) {
+            for (int i = 0; i < n * (-1); i++) {
+                int var = array[0];
+                for (int j = 0; j < array.length - 1; j++) {
+                    array[j] = array[j + 1];
+                }
+                array[array.length - 1] = var;
+            }
+        }
+        System.out.println("Измененный массив: " + Arrays.toString(array));
     }
 }
